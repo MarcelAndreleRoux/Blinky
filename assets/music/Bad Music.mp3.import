@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b7ngyaybdcfn8"
+path="res://.godot/imported/Bad Music.mp3-eb183dcff3f160ff559d076ca5f58197.mp3str"
+
+[deps]
+
+source_file="res://assets/music/Bad Music.mp3"
+dest_files=["res://.godot/imported/Bad Music.mp3-eb183dcff3f160ff559d076ca5f58197.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

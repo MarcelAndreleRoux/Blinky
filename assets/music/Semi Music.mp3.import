@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dqru7fwj73tbv"
+path="res://.godot/imported/Semi Music.mp3-e56e612468415cf6460cf29f29c5c6fc.mp3str"
+
+[deps]
+
+source_file="res://assets/music/Semi Music.mp3"
+dest_files=["res://.godot/imported/Semi Music.mp3-e56e612468415cf6460cf29f29c5c6fc.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
