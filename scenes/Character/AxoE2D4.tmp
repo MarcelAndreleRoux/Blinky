@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://buq175x3040c4"]
+[gd_scene load_steps=39 format=3 uid="uid://buq175x3040c4"]
 
 [ext_resource type="Script" path="res://scenes/Character/Axolotl.gd" id="1_71yom"]
 [ext_resource type="Texture2D" uid="uid://cvubp548ydc5m" path="res://assets/sprites/Character/pink/Axolotl_Pink_Resting.png" id="1_d7y0x"]
@@ -9,7 +9,6 @@
 [ext_resource type="Texture2D" uid="uid://0tytyug7a0tn" path="res://assets/sprites/Character/pink/Axolotl_Pink_Resting_Idle.png" id="6_brkox"]
 [ext_resource type="AudioStream" uid="uid://dy1384wpsw52f" path="res://assets/sounds/big-bubble-2-169074.mp3" id="7_x2dmh"]
 [ext_resource type="AudioStream" uid="uid://itwqxbbp5fom" path="res://assets/sounds/pick-92276.mp3" id="8_fgnw3"]
-[ext_resource type="AnimationNodeStateMachine" uid="uid://40kcjocth7u5" path="res://scenes/Character/AxolotlStateMachine.tres" id="8_n0sp3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5jqdg"]
 size = Vector2(31, 33)
@@ -88,30 +87,6 @@ tracks/5/keys = {
 "update": 1,
 "values": [false]
 }
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("bubble:volume_db")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [-20.0]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("bubble:pitch_scale")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [1.8]
-}
 
 [sub_resource type="Animation" id="Animation_pabvi"]
 resource_name = "death"
@@ -166,7 +141,6 @@ tracks/3/keys = {
 
 [sub_resource type="Animation" id="Animation_8oolu"]
 resource_name = "getting_up"
-length = 1.1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -210,10 +184,10 @@ tracks/3/path = NodePath("Sprite2D:frame")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 11]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -222,34 +196,10 @@ tracks/4/path = NodePath("bubble:playing")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0.1),
+"times": PackedFloat32Array(0.4),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("bubble:volume_db")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [-20.0]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("bubble:pitch_scale")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [1.8]
 }
 
 [sub_resource type="Animation" id="Animation_pjrpv"]
@@ -511,116 +461,101 @@ tracks/5/keys = {
 "values": [true]
 }
 
-[sub_resource type="Animation" id="Animation_4ub2y"]
-resource_name = "going_down"
-length = 1.1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("2_4s4j4")]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D:hframes")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [4]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Sprite2D:vframes")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [4]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Sprite2D:frame")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("bubble:playing")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0.1),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("bubble:volume_db")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [-20.0]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("bubble:pitch_scale")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [1.0]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_smmtu"]
 _data = {
 "RESET": SubResource("Animation_4gsic"),
 "death": SubResource("Animation_pabvi"),
 "getting_up": SubResource("Animation_8oolu"),
-"going_down": SubResource("Animation_4ub2y"),
 "idle": SubResource("Animation_pjrpv"),
 "idle_bubble": SubResource("Animation_cx5ik"),
 "resting": SubResource("Animation_bvm14"),
 "resting_idle": SubResource("Animation_7hytt")
 }
 
-[sub_resource type="AnimationNodeTimeScale" id="AnimationNodeTimeScale_kbhca"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_s4fpj"]
+animation = &"idle"
 
-[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_dlsev"]
-graph_offset = Vector2(-482.901, 70.8204)
-nodes/AnimationNodeStateMachine/node = ExtResource("8_n0sp3")
-nodes/AnimationNodeStateMachine/position = Vector2(-60, 120)
-nodes/TimeScale/node = SubResource("AnimationNodeTimeScale_kbhca")
-nodes/TimeScale/position = Vector2(320, 220)
-nodes/output/position = Vector2(520, 200)
-node_connections = [&"TimeScale", 0, &"AnimationNodeStateMachine", &"output", 0, &"TimeScale"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_h7fou"]
+animation = &"idle"
+
+[sub_resource type="AnimationNodeBlendSpace1D" id="AnimationNodeBlendSpace1D_2cjlc"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_s4fpj")
+blend_point_0/pos = -1.0
+blend_point_1/node = SubResource("AnimationNodeAnimation_h7fou")
+blend_point_1/pos = 1.0
+blend_mode = 1
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_nbi3s"]
+animation = &"idle_bubble"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_xiw2d"]
+animation = &"idle_bubble"
+
+[sub_resource type="AnimationNodeBlendSpace1D" id="AnimationNodeBlendSpace1D_g0ymf"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_nbi3s")
+blend_point_0/pos = -1.0
+blend_point_1/node = SubResource("AnimationNodeAnimation_xiw2d")
+blend_point_1/pos = 1.0
+blend_mode = 1
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_74lsr"]
+animation = &"resting"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_eva7a"]
+animation = &"resting"
+
+[sub_resource type="AnimationNodeBlendSpace1D" id="AnimationNodeBlendSpace1D_6kc7n"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_74lsr")
+blend_point_0/pos = -1.0
+blend_point_1/node = SubResource("AnimationNodeAnimation_eva7a")
+blend_point_1/pos = 1.0
+blend_mode = 1
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_e6yf5"]
+animation = &"resting_idle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_c7um7"]
+animation = &"resting_idle"
+
+[sub_resource type="AnimationNodeBlendSpace1D" id="AnimationNodeBlendSpace1D_ukt4r"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_e6yf5")
+blend_point_0/pos = -1.0
+blend_point_1/node = SubResource("AnimationNodeAnimation_c7um7")
+blend_point_1/pos = 1.0
+blend_mode = 1
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_65kmc"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_0tadn"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ooyme"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_yh5ub"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_x1a31"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_1jnvm"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_06fjw"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_ogo5r"]
+states/idle/node = SubResource("AnimationNodeBlendSpace1D_2cjlc")
+states/idle/position = Vector2(567, 100)
+states/idle_bubble/node = SubResource("AnimationNodeBlendSpace1D_g0ymf")
+states/idle_bubble/position = Vector2(567, 2)
+states/resting/node = SubResource("AnimationNodeBlendSpace1D_6kc7n")
+states/resting/position = Vector2(379, 100)
+states/resting_bubble/node = SubResource("AnimationNodeBlendSpace1D_ukt4r")
+states/resting_bubble/position = Vector2(379, 2)
+transitions = ["idle", "idle_bubble", SubResource("AnimationNodeStateMachineTransition_65kmc"), "idle_bubble", "idle", SubResource("AnimationNodeStateMachineTransition_0tadn"), "Start", "resting", SubResource("AnimationNodeStateMachineTransition_ooyme"), "resting", "idle", SubResource("AnimationNodeStateMachineTransition_yh5ub"), "idle", "resting", SubResource("AnimationNodeStateMachineTransition_x1a31"), "resting", "resting_bubble", SubResource("AnimationNodeStateMachineTransition_1jnvm"), "resting_bubble", "resting", SubResource("AnimationNodeStateMachineTransition_06fjw")]
+graph_offset = Vector2(0, -39.7746)
 
 [node name="Axolotl" type="StaticBody2D"]
 script = ExtResource("1_71yom")
@@ -640,25 +575,15 @@ libraries = {
 }
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
-active = false
 libraries = {
 "": SubResource("AnimationLibrary_smmtu")
 }
-tree_root = SubResource("AnimationNodeBlendTree_dlsev")
+tree_root = SubResource("AnimationNodeStateMachine_ogo5r")
 anim_player = NodePath("../AnimationPlayer")
-parameters/AnimationNodeStateMachine/conditions/is_getting_up = false
-parameters/AnimationNodeStateMachine/conditions/is_going_down = false
-parameters/AnimationNodeStateMachine/conditions/is_idle = false
-parameters/AnimationNodeStateMachine/conditions/is_idle_b = false
-parameters/AnimationNodeStateMachine/conditions/is_resting = false
-parameters/AnimationNodeStateMachine/conditions/is_resting_b = false
-parameters/AnimationNodeStateMachine/getting_up/blend_position = 0
-parameters/AnimationNodeStateMachine/going_down/blend_position = 0
-parameters/AnimationNodeStateMachine/idle/blend_position = 0
-parameters/AnimationNodeStateMachine/idle_bubble/blend_position = 0
-parameters/AnimationNodeStateMachine/resting/blend_position = 0
-parameters/AnimationNodeStateMachine/resting_bubble/blend_position = 0
-parameters/TimeScale/scale = 1.0
+parameters/idle/blend_position = 0
+parameters/idle_bubble/blend_position = 0
+parameters/resting/blend_position = -0.378947
+parameters/resting_bubble/blend_position = 0
 
 [node name="bubble" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("7_x2dmh")
@@ -668,3 +593,5 @@ pitch_scale = 1.8
 [node name="pop" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("8_fgnw3")
 volume_db = -10.0
+
+[connection signal="animation_finished" from="AnimationTree" to="." method="_on_animation_tree_animation_finished"]

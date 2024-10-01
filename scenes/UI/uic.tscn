@@ -1,9 +1,89 @@
-[gd_scene format=3 uid="uid://b163hc1m0tj55"]
+[gd_scene load_steps=15 format=3 uid="uid://b163hc1m0tj55"]
+
+[ext_resource type="Script" path="res://scenes/UI/uic.gd" id="1_020pv"]
+[ext_resource type="Theme" uid="uid://bio8e84oof465" path="res://scenes/themes/custom_theme.tres" id="1_u5jhf"]
+[ext_resource type="Texture2D" uid="uid://ba3grgtd028er" path="res://assets/sprites/UI/Buttons/Buttons_Eat1.png" id="2_oxfrj"]
+[ext_resource type="Texture2D" uid="uid://b7mrig1umk7ey" path="res://assets/sprites/UI/Buttons/Buttons_Eat2.png" id="3_hsp1s"]
+[ext_resource type="Texture2D" uid="uid://di07jc4pxa8rr" path="res://assets/sprites/UI/Buttons/Button_speed1.png" id="5_0u7ae"]
+[ext_resource type="Texture2D" uid="uid://d05vwkks3be1g" path="res://assets/sprites/UI/Buttons/Buttons_Playing1.png" id="5_7ycgd"]
+[ext_resource type="Texture2D" uid="uid://bhm3euo2fs0dw" path="res://assets/sprites/UI/Buttons/Button_clean1.png" id="5_x65vc"]
+[ext_resource type="Texture2D" uid="uid://kd88u3qj0g4c" path="res://assets/sprites/UI/Buttons/Buttons_Playing2.png" id="6_abedl"]
+[ext_resource type="Texture2D" uid="uid://cvp7vuuto6bcu" path="res://assets/sprites/UI/Buttons/Button_clean2.png" id="6_owaao"]
+[ext_resource type="Texture2D" uid="uid://d0s7n03m4p1v3" path="res://assets/sprites/UI/Buttons/Button_speed2.png" id="6_umqgc"]
+[ext_resource type="Texture2D" uid="uid://c3y6ih7810jjp" path="res://assets/sprites/UI/Buttons/Buttons1.png" id="7_ktexx"]
+[ext_resource type="Texture2D" uid="uid://dw7xv2t4xbpsc" path="res://assets/sprites/UI/Health/Health_Bars_004.png" id="7_njp65"]
+[ext_resource type="Texture2D" uid="uid://bjlun3b5jmcnc" path="res://assets/sprites/UI/Health/Health_Bars_005.png" id="8_j6dv5"]
+[ext_resource type="Texture2D" uid="uid://ixkld5rvkts7" path="res://assets/sprites/UI/Buttons/Buttons2.png" id="8_t5y4b"]
 
 [node name="UIC" type="Control"]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchor_right = 0.22
+anchor_bottom = 0.224
+offset_right = 0.0399933
+offset_bottom = -0.0240021
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_020pv")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 78.0
+offset_bottom = 125.0
+
+[node name="Panel" type="Panel" parent="MarginContainer"]
+layout_mode = 2
+theme = ExtResource("1_u5jhf")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 21
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 45
+
+[node name="PauseButton" type="TextureButton" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("2_oxfrj")
+texture_pressed = ExtResource("3_hsp1s")
+
+[node name="SpeedButton" type="TextureButton" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+toggle_mode = true
+texture_normal = ExtResource("5_0u7ae")
+texture_pressed = ExtResource("6_umqgc")
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="MarginContainer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+fill_mode = 2
+texture_over = ExtResource("7_njp65")
+texture_progress = ExtResource("8_j6dv5")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 7
+
+[node name="Clean" type="TextureButton" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+texture_normal = ExtResource("5_x65vc")
+texture_pressed = ExtResource("6_owaao")
+
+[node name="Eat" type="TextureButton" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+texture_normal = ExtResource("5_7ycgd")
+texture_pressed = ExtResource("6_abedl")
+
+[node name="Play" type="TextureButton" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+texture_normal = ExtResource("7_ktexx")
+texture_pressed = ExtResource("8_t5y4b")
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/PauseButton" to="." method="_on_pause_button_pressed"]
+[connection signal="toggled" from="MarginContainer/VBoxContainer/HBoxContainer/SpeedButton" to="." method="_on_speed_button_toggled"]
