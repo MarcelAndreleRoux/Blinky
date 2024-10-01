@@ -1,5 +1,7 @@
 extends Node2D
 
+@onready var track_1 = $Track1
+
 # Play music or sound effect by name
 func play_audio(name: String, volume: float = 1.0):
 	var audio_player = get_node(name)
