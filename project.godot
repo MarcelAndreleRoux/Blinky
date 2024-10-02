@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 AudioController="*res://scenes/Shared/audio_controler.tscn"
 Global="*res://scenes/Shared/Global.gd"
 AxolotlState="*res://scenes/Shared/AxolotlState.gd"
+AxolotlAnimationState="*res://scenes/Shared/GlobalPlayer.gd"
 
 [display]
 

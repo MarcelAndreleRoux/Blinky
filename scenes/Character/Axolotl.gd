@@ -41,6 +41,7 @@ func _process(delta):
 func _on_screen_clicked(state: bool):
 	active = state
 	if state:
+		# Change the state to IDLE when the screen is clicked
 		AxolotlState.on_player_click()
 
 # Handles what happens when the timer ends
